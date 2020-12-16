@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>TODO LIST</h1>
+    <form class="signup__form" id="loginForm">
+      <label for="email"
+        >Email:
+        <input id="email" type="email" name="email" required />
+      </label>
+      <label for="password"
+        >Password:
+        <input id="password" type="password" name="password" required />
+      </label>
+      <p class="error" id="loginError" aria-live="polite"></p>
+      <button type="submit">Login</button>
+      <a href="/signup">Don't have an account yet?</a>
+    </form>
+    <script src="./login.js"></script>
+  </body>
+</html>

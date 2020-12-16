@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Signup</title>
+  </head>
+
+  <body>
+    <h1>TODO LIST</h1>
+    <form class="signup__form" id="signupForm">
+      <label for="email"
+        >Email:
+        <input id="email" type="email" name="email" required />
+      </label>
+      <label for="password"
+        >Password:
+        <input id="password" type="password" name="password" required />
+      </label>
+      <p class="error" id="signupError" aria-live="polite"></p>
+      <button type="submit">Signup</button>
+      <a href="/">already have an account?</a>
+    </form>
+
+    <script src="./signup.js"></script>
+  </body>
+</html>
