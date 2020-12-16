@@ -12,15 +12,17 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.use((req, res, next) => {
-  verifyToken(req.cookies.token)
-    .then(() => {
-      express.static(join(__dirname, '..', 'static'));
-    })
-    .catch(() => {
-      res.status(401).send('<h1>Un-Authorized</h1>');
-    });
-});
+// app.use((req, res, next) => {
+//   verifyToken(req.cookies.token)
+//     .then(() => {
+//       express.static(join(__dirname, '..', 'static'));
+//     })
+//     .catch(() => {
+//       res.status(401).send('<h1>Un-Authorized</h1>');
+//     });
+// });
+
+app.use(express.static(join(__dirname, '..', 'static')));
 
 app.set('port', process.env.PORT || 5000);
 

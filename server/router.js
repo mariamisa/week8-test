@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
 const {
   errorHandler,
@@ -7,19 +7,19 @@ const {
   getUserTodos,
   addNewTodo,
   deleteUserTodo,
-} = require("./controllers");
-const { auth } = require("./middlewares");
-const { boomify } = require("./utils");
+} = require('./controllers');
+// const { auth } = require("./middlewares");
+const { boomify } = require('./utils');
 
-router.post("/signup", signup);
-router.post("/login", login);
+// router.post('/signup', signup);
+// router.post('/login', login);
 
-router.get("/todos", auth, getUserTodos);
-router.post("/todos", auth, addNewTodo);
-router.delete("/todos/:todoId", deleteUserTodo);
+router.get('/todos', getUserTodos);
+router.post('/todos', addNewTodo);
+router.delete('/todos/:todoId', deleteUserTodo);
 
 router.use((req, res, next) => {
-  next(boomify(404, "resource not found"));
+  next(boomify(404, 'resource not found'));
 });
 
 router.use(errorHandler);
