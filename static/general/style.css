@@ -65,6 +65,7 @@ h1 {
 }
 .wrapper__form__btn {
   height: 38px;
+  cursor: pointer;
 }
 .wrapper__form__label {
   position: fixed;
@@ -91,4 +92,9 @@ h1 {
 }
 .todoLists {
   padding: 5px;
+}
+
+.wrapper__btn {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
 }

@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta charset="utf-8" />
-    <title>tdd todo</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
+    <title>todo</title>
+    <link rel="stylesheet" href="../general/style.css" />
   </head>
   <body style="display: block">
     <main class="wrapper">
-      <form id="add-todo" class="wrapper__form">
+      <br />
+      <button class="wrapper__btn" id="logoutBtn">Log out</button>
+      <form id="addTodo" class="wrapper__form">
         <h2 class="wrapper__form__heading">What to do?</h2>
         <label for="todo-description" class="wrapper__form__label"
           >To-do description</label
@@ -33,14 +31,13 @@
           value="Submit"
           class="wrapper__form__btn"
         />
+        <p class="error" id="addTodoError" aria-live="polite"></p>
       </form>
       <div id="todo-container">
         <h2 class="todo__heading">To-do</h2>
-        <ul id="todos"></ul>
-        <h2 class="completed__heading">Completed</h2>
-        <ul id="completedTodos"></ul>
+        <div id="todos"></div>
       </div>
     </main>
   </body>
-  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript" src="/private/main.js"></script>
 </html>
