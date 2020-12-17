@@ -1,7 +1,7 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
-const { validationSchema, signToken } = require('../utils');
-const { getUserByEmail } = require('../database/queries');
+const { validationSchema, signToken, boomify } = require("../utils");
+const { getUserByEmail } = require("../database/queries");
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
@@ -27,14 +27,14 @@ const login = (req, res, next) => {
     })
     .then((isAuth) => {
       if (!isAuth) {
-        throw boomify(400, 'incorrect password');
+        throw boomify(400, "incorrect password");
       }
       return signToken(id);
     })
     .then((token) =>
       res
-        .cookie('token', token)
-        .json({ status: 201, message: 'logged in successfully' })
+        .cookie("token", token)
+        .json({ status: 200, message: "logged in successfully" })
     )
     .catch(next);
 };

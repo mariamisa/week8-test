@@ -3,7 +3,7 @@ const { getTodos } = require("../database/queries");
 const getUserTodos = (req, res, next) => {
   const { userId } = req;
 
-  getTodos(userId || 1)
+  getTodos(userId)
     .then(({ rows }) => {
       res.json({ status: 200, data: rows });
     })

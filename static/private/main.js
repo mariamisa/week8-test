@@ -16,7 +16,6 @@ const Todo = (id, msg) => {
 fetch("/api/v1/todos")
   .then((res) => res.json())
   .then(({ status, data }) => {
-    console.log(data);
     if (status === 500) {
       TodoContainer.textContent =
         "Something went wrong, can't fetch your todos";
@@ -52,6 +51,16 @@ TodoForm.addEventListener("submit", (e) => {
         AddTodoError.textContent = "";
         const { id, description } = data[0];
         TodoList.appendChild(Todo(id, description));
+      }
+    });
+});
+
+LogoutButton.addEventListener("click", (e) => {
+  fetch("/api/v1/logout")
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.status === 200) {
+        window.location.href = "/";
       }
     });
 });
