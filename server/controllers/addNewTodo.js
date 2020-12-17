@@ -4,7 +4,7 @@ const addNewTodo = (req, res, next) => {
   const { userId } = req;
   const { description } = req.body;
 
-  addTodo(userId, description)
+  addTodo(userId || 1, description)
     .then(({ rows }) => {
       res.json({ status: 201, data: rows });
     })
